@@ -1,0 +1,10 @@
+idMapping:
+  cacheValidTime: 5000
+  mapping:
+#    portrait: cs,SerialID
+#    count : dealer,dealerid
+    cs: SerialID
+    dealer : dealerid
+  component:  MServiceIDMappingObtain
+  microService:
+    url: http://mmcpushapi.wfw.yichehuoban.cn/MMCIdMapping/1/1/1/1
