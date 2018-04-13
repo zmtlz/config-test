@@ -10,7 +10,7 @@ spring:
         - 192.168.87.56:6379
   datasource:
      type: com.alibaba.druid.pool.DruidDataSource
-     url: jdbc:mysql://192.168.0.181:3306/EPMMC_OP?serverTimezone:UTC&useSSL:false
+     url: jdbc:mysql://192.168.0.181:3306/EPMMC_OP
      username: root
      password: 123456
      driver-class-name: com.mysql.jdbc.Driver
