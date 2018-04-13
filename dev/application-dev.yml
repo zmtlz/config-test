@@ -1,3 +1,69 @@
-customer:
+eureka:
+  client:
+    serviceUrl:
+#      defaultZone: http://eureka1:8751/eureka/,http://eureka2:8751/eureka/
+      defaultZone: http://localhost:8751/eureka/
+spring:
+  redis:
+    cluster:
+      nodes:
+        - 192.168.87.56:6379
+  datasource:
+     type: com.alibaba.druid.pool.DruidDataSource
+     url: jdbc:mysql://192.168.0.181:3306/EPMMC_OP?serverTimezone:UTC&useSSL:false
+     username: root
+     password: 123456
+     driver-class-name: com.mysql.jdbc.Driver
+     initialSize: 5
+custom:
   service:
-    test: dev
+    manufacturerIDMapping:
+      url: http://mmccloudbasic.wfw.yichehuoban.cn/CompanyJoin/GetCompanyMappingInfoList/EB8947D8-1909-4448-9D8B-6918DBB57A24/63375667D2893BE6B9235838377C1823/20180124164232914/1
+      cache:
+        validTime: 5000
+    carType:
+      url: http://mmccloudbasic.wfw.yichehuoban.cn/CompanyJoin/GetCarSerialInfoByCsID/EB8947D8-1909-4448-9D8B-6918DBB57A24/63375667D2893BE6B9235838377C1823/20180124164232914/1
+    portrait:
+      url: http://wapi.easypass.cn/crm/BigData/GetUserPortraitList/1/1/1/1
+      fields: "PurchaseIntention,SerialList"
+    basic:
+      url: http://mmccloudbasic.wfw.yichehuoban.cn/BasicOP/GetProvinceCityInfoList/1/1/1/1
+      cache:
+        validTime: 3000
+      cityFields: Pid,PName,Cid,CName
+      csFields: CsID,CsName,CbID,CbName
+  interfaceDataField: RetValue
+  cache:
+    validTime: 10000
+purchaseUse:
+  convertField:
+    /persona/bjdq_usertag/basic_tag/cityname: LocationName
+    /persona/bjdq_usertag/basic_tag/platform: Terminal
+  carLevel:
+    轿车: a
+    微型车: a
+    小型车: a
+    紧凑型: a
+    紧凑型车: a
+    中型车: a
+    中大型: b
+    中大型车: b
+    豪华车: b
+    MPV: c
+    SUV: d
+    跑车: e
+    面包车: e
+    皮卡: f
+    客车: g
+    概念车: h
+    生产厂家参数: h
+    其它: h
+  purpose:
+    a: 家用,通勤
+    b: 公务
+    c: 家用,旅行
+    d: 旅游,通勤
+    e: 家用
+    f: 货运,家用
+    g: 载客
+    h: 其他
