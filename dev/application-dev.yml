@@ -2,7 +2,7 @@ eureka:
   client:
     serviceUrl:
 #      defaultZone: http://eureka1:8751/eureka/,http://eureka2:8751/eureka/
-      defaultZone: http://192.168.0.202:8751/eureka/
+      defaultZone: http://192.168.0.202:8761/eureka/
 spring:
   redis:
     cluster:
